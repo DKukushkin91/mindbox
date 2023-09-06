@@ -1,0 +1,59 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "ignorePatterns": ["dist", ".eslintrc"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react-refresh"],
+  "rules": {
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "comma-dangle": ["error", {"functions": "never", "objects":  "always-multiline", "arrays":  "always-multiline"}],
+    "object-curly-spacing": ["error", "never"],
+    "arrow-body-style": 0,
+    "semi": "warn",
+    "no-param-reassign": 0,
+
+    // airbnb
+    "airbnb/arrow-body-style": 0,
+
+    // react
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"]}],
+    "react/jsx-fragments": ["error", "element"],
+    "react/jsx-indent": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/function-component-definition": 0,
+    "react/jsx-indent-props": 0,
+
+    // react-refresh
+    "react-refresh/only-export-components": ["warn", {"allowConstantExport": true}],
+
+    // import
+    "import/prefer-default-export": 0,
+    "import/extensions": ["error", "ignorePackages", {"js": "never", "jsx": "never", "ts": "never", "tsx": "never"}],
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.json"
+      }
+    }
+  }
+}
